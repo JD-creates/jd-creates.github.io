@@ -4,28 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JD Auto Detailing</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; scroll-behavior:smooth; }
-
 body { background:#0b0b0b; color:#fff; }
 
-/* NAVIGATION */
+/* NAV */
 nav {
   position:fixed; top:0; left:0; width:100%;
-  background:rgba(0,0,0,.7);
-  padding:15px 10%;
-  display:flex; justify-content:space-between; align-items:center;
-  z-index:100;
+  background:rgba(0,0,0,.7); padding:15px 10%;
+  display:flex; justify-content:space-between; align-items:center; z-index:100;
 }
 nav .logo-small { font-weight:700; font-size:24px; }
-nav a {
-  color:white; margin-left:25px;
-  text-decoration:none; font-weight:600;
-  transition:.2s;
-}
+nav a { color:white; margin-left:25px; text-decoration:none; font-weight:600; transition:.2s; }
 nav a:hover { color:#dcdcdc; }
 
 /* HERO */
@@ -33,18 +24,11 @@ nav a:hover { color:#dcdcdc; }
   height:100vh;
   background:
     linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.85)),
-    url('https://images.unsplash.com/photo-1677779032565-2f2f71c93a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyJTIwcGF0aGx8ZW58MHx8MHx8&ixlib=rb-4.0.3&q=80&w=1920');
-  background-size:cover;
-  background-attachment: fixed;
-  background-position:center;
-  display:flex; flex-direction:column;
-  justify-content:center; align-items:center;
-  text-align:center;
-  transform: scale(1);
-  transition: transform 0.5s ease-out;
+    url('https://images.unsplash.com/photo-1677779032565-2f2f71c93a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+  background-size:cover; background-attachment:fixed; background-position:center;
+  display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
 }
-
-.hero h1 { font-size:3rem; font-weight:700; text-shadow:0 0 10px rgba(255,255,255,.6);}
+.hero h1 { font-size:3rem; font-weight:700; text-shadow:0 0 10px rgba(255,255,255,.7);}
 .hero p { max-width:600px; margin:20px auto; font-size:1.1rem; opacity:.9; text-shadow:0 0 6px rgba(0,0,0,.6);}
 .cta { margin-top:25px; padding:15px 35px; background:white; color:black; text-decoration:none; font-weight:600; border-radius:30px; transition:.3s; box-shadow:0 0 8px rgba(255,255,255,.2);}
 .cta:hover { background:#dcdcdc; box-shadow:0 0 20px rgba(255,255,255,.4); }
@@ -57,9 +41,8 @@ section.visible { opacity:1; transform:translateY(0); }
 /* SERVICES */
 .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
 .card { background:#141414; padding:35px; border-radius:15px; transition:.3s; cursor:pointer; }
+.card img { width:100%; border-radius:8px; margin-bottom:15px; }
 .card:hover { transform:translateY(-8px); box-shadow:0 0 25px rgba(255,255,255,.08); }
-.card h3 { margin-bottom:15px; }
-.card p { opacity:.85; line-height:1.6; }
 
 /* REVIEWS */
 .reviews { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
@@ -73,8 +56,6 @@ section.visible { opacity:1; transform:translateY(0); }
 
 /* FOOTER */
 footer { padding:30px; text-align:center; opacity:.6; font-size:.85rem; }
-
-/* Hero parallax scroll effect */
 </style>
 </head>
 
@@ -84,39 +65,60 @@ footer { padding:30px; text-align:center; opacity:.6; font-size:.85rem; }
   <div class="logo-small">JD</div>
   <div>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="logo">JD</div>
   <h1>Premium Auto Detailing</h1>
-  <p>Luxury-level car detailing that restores, protects, and elevates your vehicle inside and out.</p>
+  <p>Luxury-level car care that restores, protects, and elevates your ride.</p>
   <a class="cta" href="confirmation.html">Book Your Detail</a>
 </div>
 
 <section id="services">
   <h2 class="section-title">Our Services</h2>
   <div class="services">
-    <div class="card"><h3>Full Detail</h3><p>Deep interior cleaning, exterior wash, wax, tire shine, and final inspection for showroom results.</p></div>
-    <div class="card"><h3>Interior Detail</h3><p>Seats, carpets, dashboard, vents, and odor removal to make your cabin feel brand new.</p></div>
-    <div class="card"><h3>Exterior Detail</h3><p>Hand wash, paint decontamination, wax protection, wheels, and tire dressing.</p></div>
+    <div class="card">
+      <img src="https://pixabay.com/get/ga23c06e7dcd2.jpg" alt="Detailing Exterior">
+      <h3>Full Detail</h3>
+      <p>Interior cleaning, exterior wash & wax, tire shine & protection.</p>
+    </div>
+    <div class="card">
+      <img src="https://pixabay.com/get/g9d08b6861.jpg" alt="Interior Detail">
+      <h3>Interior Detail</h3>
+      <p>Seats, carpets, dashboard, vents — spotless and fresh.</p>
+    </div>
+    <div class="card">
+      <img src="https://pixabay.com/get/g28b9fec0f.jpg" alt="Exterior Detail">
+      <h3>Exterior Detail</h3>
+      <p>Hand wash, paint polish, and wax protection.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="services">
+    <div class="card"><img src="https://images.unsplash.com/photo-1598032896762.jpg" alt="Car shine"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1605825142333.jpg" alt="Car wash"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1612849158644.jpg" alt="Detail work"></div>
   </div>
 </section>
 
 <section id="reviews">
   <h2 class="section-title">Customer Reviews</h2>
   <div class="reviews">
-    <div class="review">“My car looked better than when I bought it. JD pays attention to every detail.”<span>— Anthony M.</span></div>
-    <div class="review">“Professional, fast, and worth every dollar. Highly recommend.”<span>— Derick D.</span></div>
-    <div class="review">“Interior was spotless and smelled amazing. I’m booking again.”<span>— Chris R.</span></div>
+    <div class="review">“JD made my car look better than new. Best detail I’ve ever seen!”<span>— Tony J.</span></div>
+    <div class="review">“Super professional and fast. Highly recommend.”<span>— Andrew M.</span></div>
+    <div class="review">“Interior was spotless and smelled amazing.”<span>— Nicole V.</span></div>
   </div>
 </section>
 
 <section id="contact" class="contact">
   <h2 class="section-title">Get In Touch</h2>
-  <p>Phone: (401) 555-0198</p>
+  <p>Phone: (401) 555‑0198</p>
   <p>Email: jdautodetailing@email.com</p>
   <a class="cta" href="confirmation.html">Book Now</a>
 </section>
@@ -126,34 +128,20 @@ footer { padding:30px; text-align:center; opacity:.6; font-size:.85rem; }
 </footer>
 
 <script>
-// Smooth scroll with offset
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
+// Fade sections in
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+},{ threshold: 0.15 });
+sections.forEach(section => observer.observe(section));
+
+// Smooth nav scroll
+document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
-    const offset = 70;
-    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    window.scrollTo({ top: target.offsetTop - 70, behavior:'smooth' });
   });
-});
-
-// Fade-in sections on scroll
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{ threshold: 0.15 });
-
-sections.forEach(section => observer.observe(section));
-
-// Hero parallax zoom
-window.addEventListener('scroll', () => {
-  const hero = document.querySelector('.hero');
-  let offset = window.scrollY;
-  hero.style.transform = `scale(${1 + offset / 1000})`;
 });
 </script>
 
