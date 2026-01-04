@@ -8,51 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; scroll-behavior:smooth; }
 
 body { background:#0b0b0b; color:#fff; }
-
-/* HERO */
-.hero {
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)),
-    url('https://images.unsplash.com/photo-1617814076449-bb4df7e8cfa0');
-  background-size:cover;
-  background-attachment: fixed;
-  background-position:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.logo {
-  width:90px; height:90px;
-  border:2px solid white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700; font-size:32px;
-  margin-bottom:20px;
-}
-
-.hero h1 { font-size:3rem; font-weight:700; }
-.hero p { max-width:600px; margin:20px auto; font-size:1.1rem; opacity:.9; }
-
-.cta {
-  margin-top:25px;
-  padding:15px 35px;
-  background:white;
-  color:black;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:30px;
-  transition:.3s;
-}
-.cta:hover { background:#dcdcdc; }
 
 /* NAVIGATION */
 nav {
@@ -64,16 +22,37 @@ nav {
 }
 nav .logo-small { font-weight:700; font-size:24px; }
 nav a {
-  color:white;
-  margin-left:25px;
-  text-decoration:none;
-  font-weight:600;
+  color:white; margin-left:25px;
+  text-decoration:none; font-weight:600;
   transition:.2s;
 }
 nav a:hover { color:#dcdcdc; }
 
+/* HERO */
+.hero {
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1617814076449-bb4df7e8cfa0'); /* Porch car image */
+  background-size:cover;
+  background-attachment: fixed;
+  background-position:center;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center;
+}
+
+.logo { width:90px; height:90px; border:2px solid white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:32px; margin-bottom:20px; }
+
+.hero h1 { font-size:3rem; font-weight:700; }
+.hero p { max-width:600px; margin:20px auto; font-size:1.1rem; opacity:.9; }
+
+.cta { margin-top:25px; padding:15px 35px; background:white; color:black; text-decoration:none; font-weight:600; border-radius:30px; transition:.3s; }
+.cta:hover { background:#dcdcdc; }
+
 /* SECTIONS */
-section { padding:80px 10%; }
+section { padding:80px 10%; opacity:0; transform:translateY(50px); transition:.8s ease-in-out; }
+section.visible { opacity:1; transform:translateY(0); }
 .section-title { text-align:center; font-size:2.2rem; margin-bottom:50px; }
 
 /* SERVICES */
@@ -146,16 +125,28 @@ footer { padding:30px; text-align:center; opacity:.6; font-size:.85rem; }
 </footer>
 
 <script>
-// Optional smooth scroll with offset for fixed nav
+// Smooth scroll with offset
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
   link.addEventListener('click', function(e){
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
-    const offset = 70; // nav height
+    const offset = 70;
     window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
   });
 });
+
+// Fade-in sections on scroll
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{ threshold: 0.15 });
+
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
