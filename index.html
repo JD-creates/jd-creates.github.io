@@ -3,240 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JD Details</title>
+<title>JD Auto Detailing</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #000;
-        color: #fff;
-    }
-    header {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: rgba(0,0,0,0.85);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 50px;
-        z-index: 999;
-    }
-    header .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: gold;
-        cursor: pointer;
-    }
-    header nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        font-weight: 500;
-        transition: 0.3s;
-    }
-    header nav a:hover {
-        color: gold;
-    }
-    section {
-        padding: 100px 50px;
-        min-height: 100vh;
-    }
-    .hero {
-        background: url('https://images.squarespace-cdn.com/content/v1/5da923c3d570be7703c8b4c7/5d978e6e-dd3d-44d3-a0f5-a77c9b09f336/IMG_1423.jpg') center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: gold;
-        font-size: 50px;
-        font-weight: bold;
-        height: 100vh;
-        text-shadow: 2px 2px 10px black;
-    }
-    .services, .gallery, .reviews, .booking {
-        background-color: #111;
-        border-top: 2px solid gold;
-    }
-    h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 36px;
-        color: gold;
-    }
-    .service-cards {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .service-card {
-        background-color: #222;
-        padding: 20px;
-        border-radius: 10px;
-        width: 250px;
-        text-align: center;
-        transition: 0.3s;
-    }
-    .service-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px gold;
-    }
-    .service-card img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-    .gallery-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    .gallery-container img {
-        width: 300px;
-        border-radius: 10px;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-    .gallery-container img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px gold;
-    }
-    .reviews-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        max-width: 800px;
-        margin: auto;
-    }
-    .review {
-        background-color: #222;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        width: 100%;
-    }
-    .booking-form {
-        max-width: 600px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .booking-form input, .booking-form textarea {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-    }
-    .booking-form button {
-        padding: 15px;
-        border: none;
-        border-radius: 5px;
-        background-color: gold;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .booking-form button:hover {
-        background-color: #ffdd00;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #111;
-        border-top: 2px solid gold;
-        color: gold;
-    }
+/* GLOBAL STYLES */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family:'Montserrat', sans-serif; scroll-behavior: smooth; }
+body { background: #000; color: #fff; }
+
+header {
+  position: fixed; top:0; left:0; width:100%;
+  background: rgba(0,0,0,.85); padding: 15px 50px;
+  display: flex; justify-content: space-between; align-items:center;
+  z-index: 1000;
+}
+header .logo { color: gold; font-size: 28px; font-weight: 700; }
+header nav a { color: #fff; margin-left: 25px; text-decoration:none; font-size: 16px; font-weight:600; transition: .3s; }
+header nav a:hover { color: gold; }
+
+section { padding: 100px 50px; }
+.section-title { text-align:center; font-size: 2.8rem; color: gold; margin-bottom:40px; }
+
+/* HERO */
+.hero {
+  height:100vh; background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.85)),
+    url("images/hero.jpg") center/cover no-repeat;
+  display:flex; justify-content:center; align-items:center; text-align:center;
+}
+.hero h1 { font-size: 4rem; font-weight:700; text-shadow:0 0 15px rgba(0,0,0,.7); }
+.hero p { font-size:1.3rem; margin-top:15px; opacity:.9; text-shadow:0 0 8px rgba(0,0,0,.6); }
+.hero .cta {
+  display:inline-block; margin-top:25px; padding:18px 42px;
+  background: gold; color:black; font-weight:700; border-radius:30px;
+  text-decoration:none; transition:.3s;
+}
+.hero .cta:hover { background:#d4a900; transform:scale(1.05); }
+
+/* SERVICES */
+.services-grid {
+  display: flex; gap: 30px; justify-content:center; flex-wrap:wrap;
+}
+.service-box {
+  background:#111; border: 2px solid gold; border-radius:15px;
+  width: 280px; padding:20px; text-align:center; transition:.4s;
+}
+.service-box:hover { transform: translateY(-6px); box-shadow:0 0 20px rgba(255,255,0,.2); }
+.service-box img { width:100%; border-radius:10px; margin-bottom:15px; }
+.service-box h3 { font-size:1.4rem; color: gold; margin-bottom:10px; }
+.service-box p { font-size:1rem; opacity:.85; }
+
+/* GALLERY */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap:20px; justify-items:center;
+}
+.gallery-grid img { width:100%; border-radius:12px; transition:.3s; cursor:pointer; }
+.gallery-grid img:hover { transform:scale(1.05); box-shadow:0 0 15px rgba(255,255,255,.2); }
+
+/* REVIEWS */
+.review-box {
+  background:#111; padding:25px; border-left:4px solid gold;
+  margin:15px auto; max-width:700px; border-radius:10px;
+  font-size:1.05rem; opacity:.9;
+}
+.review-name { display:block; margin-top:12px; font-weight:700; color: gold; }
+
+/* BOOKING FORM */
+form { display:flex; flex-direction:column; gap:10px; max-width:600px; margin:auto; }
+form input, form textarea {
+  padding:12px; border:none; border-radius:6px; font-size:1rem;
+  background:#222; color:#fff;
+}
+form button {
+  padding:15px; background: gold; color:black; border:none; font-size:1.1rem;
+  font-weight:700; border-radius:8px; cursor:pointer; transition:.3s;
+}
+form button:hover { background:#d4a900; }
+
+/* FOOTER */
+footer { text-align:center; padding:30px; font-size:.85rem; opacity:.7; color: gold; }
 </style>
+
 </head>
 <body>
 
 <header>
-    <div class="logo">JD</div>
-    <nav>
-        <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#booking">Book Now</a>
-    </nav>
+  <div class="logo">JD Auto</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#booking">Book</a>
+  </nav>
 </header>
 
 <section class="hero" id="hero">
-    Premium Car Detailing
+  <div>
+    <h1>JD Auto Detailing</h1>
+    <p>Professional car care that restores, protects, and shines like new.</p>
+    <a class="cta" href="#booking">Book Now</a>
+  </div>
 </section>
 
-<section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-cards">
-        <div class="service-card">
-            <img src="https://www.konigdetailing.com/wp-content/uploads/2021/11/Konig-Detailing-Miami-Cermic-Pro-PPF-1.jpg" alt="Luxury Car Detail">
-            <h3>Luxury Exterior Detailing</h3>
-            <p>Full exterior wash, polish, and protection for high-end vehicles.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://detaillounge.com/wp-content/themes/yootheme/cache/3b/exterior-car-detailing-3b241408.jpeg" alt="Foam Wash">
-            <h3>Foam Wash & Wax</h3>
-            <p>Deep clean with foam technology, wax finish for ultimate shine.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1619431856706-ca2cc58258f6?fm=jpg" alt="Interior Detailing">
-            <h3>Interior Deep Cleaning</h3>
-            <p>Leather, carpets, dashboards all cleaned & treated to perfection.</p>
-        </div>
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-box">
+      <img src="images/service1.jpg" alt="Detailing Service">
+      <h3>Full Exterior & Interior</h3>
+      <p>Comprehensive deep clean & polish inside & out.</p>
     </div>
-</section>
-
-<section class="gallery" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-container">
-        <img src="https://images.unsplash.com/photo-1633014041037-f5446fb4ce99?fm=jpg" alt="Car Closeup 1">
-        <img src="https://images.unsplash.com/photo-1620584899131-a5ff5f8fbb03?fm=jpg" alt="Car Closeup 2">
-        <img src="https://images.unsplash.com/photo-1619431856706-ca2cc58258f6?fm=jpg" alt="Car Closeup 3">
-        <img src="https://images.unsplash.com/photo-1661443396451-0ce1776a483b?fm=jpg" alt="Car Closeup 4">
-        <img src="https://images.unsplash.com/photo-1620584899131-a5ff5f8fbb03?fm=jpg" alt="Car Closeup 5">
-        <img src="https://images.unsplash.com/photo-1633014041037-f5446fb4ce99?fm=jpg" alt="Car Closeup 6">
+    <div class="service-box">
+      <img src="images/service2.jpg" alt="Detailing Service">
+      <h3>Paint Correction & Shine</h3>
+      <p>High gloss finish with clay bar, polish, and wax.</p>
     </div>
-</section>
-
-<section class="reviews" id="reviews">
-    <h2>Customer Reviews</h2>
-    <div class="reviews-container">
-        <div class="review">
-            <p>"JD Details transformed my car! It looks better than new. Highly recommend!"</p>
-            <strong>- Alex R.</strong>
-        </div>
-        <div class="review">
-            <p>"Premium service, amazing attention to detail. My Lamborghini shines like crazy!"</p>
-            <strong>- Mia S.</strong>
-        </div>
-        <div class="review">
-            <p>"Fast, professional, and flawless. Best detailing experience ever!"</p>
-            <strong>- Jordan L.</strong>
-        </div>
+    <div class="service-box">
+      <img src="images/service3.jpg" alt="Detailing Service">
+      <h3>Interior Leather & Trim</h3>
+      <p>Leather conditioning, vacuum, and stain removal.</p>
     </div>
+  </div>
 </section>
 
-<section class="booking" id="booking">
-    <h2>Book Your Service</h2>
-    <form class="booking-form" onsubmit="alert('Thank you! Your booking has been submitted.'); return false;">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Car Model" required>
-        <textarea placeholder="Additional Info"></textarea>
-        <button type="submit">Book Now</button>
-    </form>
+<section id="gallery">
+  <h2 class="section-title">Premium Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/gallery1.jpg" alt="Gallery Car 1">
+    <img src="images/gallery2.jpg" alt="Gallery Car 2">
+    <img src="images/gallery3.jpg" alt="Gallery Car 3">
+    <img src="images/gallery4.jpg" alt="Gallery Car 4">
+    <img src="images/gallery5.jpg" alt="Gallery Car 5">
+    <img src="images/gallery6.jpg" alt="Gallery Car 6">
+  </div>
+</section>
+
+<section id="reviews">
+  <h2 class="section-title">Customer Reviews</h2>
+  <div class="review-box">
+    “JD Auto made my Porsche look better than the day I bought it. Real pros.” <span class="review-name">— Alexander R.</span>
+  </div>
+  <div class="review-box">
+    “Super detailed and professional. My Lamborghini shines so good.” <span class="review-name">— Serena K.</span>
+  </div>
+  <div class="review-box">
+    “Best detailing experience. Clean inside and out. Worth every penny.” <span class="review-name">— Marcus D.</span>
+  </div>
+</section>
+
+<section id="booking">
+  <h2 class="section-title">Book Your Detail</h2>
+  <form onsubmit="alert('Thanks! We got your booking and will reach out soon.'); return false;">
+    <input type="text" placeholder="Your Full Name" required>
+    <input type="email" placeholder="Your Email Address" required>
+    <input type="text" placeholder="Car Make & Model" required>
+    <textarea rows="4" placeholder="Details (optional)"></textarea>
+    <button type="submit">Submit Booking</button>
+  </form>
 </section>
 
 <footer>
-    &copy; 2026 JD Details. All Rights Reserved.
+  &copy; 2026 JD Auto Detailing — All Rights Reserved
 </footer>
 
 </body>
 </html>
-
-
