@@ -74,12 +74,20 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.1);
 }
 
 .card img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .price {
@@ -98,6 +106,10 @@ input, textarea {
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #e0a800;
 }
 
 button:hover {
@@ -132,26 +144,26 @@ button:hover {
 <h2>PRODUCTS & SERVICES</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%207.jpeg" style="height:200px;object-fit:cover;">
+    <img src="Image%207.jpeg">
     <h3>Exterior Detail</h3>
-    <p>Full hand wash, wheels, tires, and paint shine.</p>
+    <p>Complete exterior cleaning with hand wash, wheels, tires, and paint protection for a showroom shine.</p>
     <p class="price">$120</p>
   </div>
   <div class="card">
-    <img src="Image%2026.jpeg" style="height:200px;object-fit:cover;">
+    <img src="Image%2026.jpeg">
     <h3>Interior Detail</h3>
-    <p>Deep vacuum, wipe-down, leather & fabric care.</p>
+    <p>Interior cleaned top to bottom with vacuuming, wipe-downs, and leather/fabric care for a spotless cabin.</p>
     <p class="price">$140</p>
   </div>
   <div class="card">
-    <img src="Image%2013.jpeg" style="height:200px;object-fit:cover;">
+    <img src="Image%2013.jpeg">
     <h3>Full Detail</h3>
-    <p>Complete interior + exterior restoration.</p>
+    <p>Full detail combining interior deep-clean and exterior restoration for a pristine finish.</p>
     <p class="price">$220</p>
   </div>
 </div>
 <div style="text-align:center;margin-top:25px;">
-  <a href="#book" style="background:#e0a800;color:black;padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:bold;">Book Now</a>
+  <a href="#book" style="background:#e0a800;color:black;padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:bold;scroll-behavior:smooth;">Book Now</a>
 </div>
 </section>
 
@@ -181,15 +193,15 @@ button:hover {
 <div class="grid">
   <div class="card">
     <img src="Image%2023.jpeg">
-    <p>Owner-operated service ensures accountability.</p>
+    <p>Every service is personally handled by the owner, keeping accountability and quality top priority.</p>
   </div>
   <div class="card">
     <img src="Image%2025.jpeg">
-    <p>Affordable pricing without sacrificing quality.</p>
+    <p>Competitive pricing that doesn’t cut corners—premium care without premium cost.</p>
   </div>
   <div class="card">
     <img src="Image%208.jpeg">
-    <p>More attention to detail than large shops.</p>
+    <p>Attention to detail that bigger shops can’t match, every car gets the focus it deserves.</p>
   </div>
 </div>
 </section>
@@ -200,17 +212,17 @@ button:hover {
   <div class="card">
     <img src="Image%2027.jpeg">
     <h3>Overhead Costs</h3>
-    <p> Cleaning supplies, equipment, water, electricity.</p>
+    <p>Cleaning supplies, equipment, water, electricity—all managed smartly to keep prices fair.</p>
   </div>
   <div class="card">
     <img src="Image%2028.jpeg">
     <h3>Operating Costs</h3>
-    <p>Maintenance, marketing, cleaning materials.</p>
+    <p>Maintenance, marketing, and cleaning materials handled efficiently to maintain high-quality service.</p>
   </div>
   <div class="card">
     <img src="Image%2029.jpeg">
     <h3>Revenue</h3>
-    <p>Detailing services and premium packages.</p>
+    <p>Detailing services and premium packages generate steady income while keeping customer satisfaction high.</p>
   </div>
 </div>
 <p style="max-width:800px;margin:30px auto;text-align:center;">
@@ -240,7 +252,7 @@ results, honest pricing, and consistent quality.
   <div class="card">
     <img src="IMG_9945.jpeg">
     <p>
-As the owner and lead detailer, he handles every car personally—and even earns “Employee of the Month” every month.
+The owner handles every car personally—and yeah, he wins Employee of the Month every month.
     </p>
   </div>
 </div>
@@ -251,11 +263,11 @@ As the owner and lead detailer, he handles every car personally—and even earns
 <div class="grid">
   <div class="card">
     <img src="Image%208.jpeg">
-    <p>Outside view of the rented detailing space, built for high-quality car detailing.</p>
+    <p>Outside view of the rented detailing space—designed for high-quality car care and service you can trust.</p>
   </div>
   <div class="card">
     <img src="Image%2013.jpeg">
-    <p>1550 Shinecrest Drive, Austin — where your car gets the care it actually deserves.</p>
+    <p>1550 Shinecrest Drive, Austin, where every car gets the attention it deserves.</p>
   </div>
 </div>
 </section>
@@ -266,18 +278,18 @@ As the owner and lead detailer, he handles every car personally—and even earns
 <div style="max-width:500px;margin:auto;background:#141414;padding:20px;border-radius:10px;">
   <form id="bookingForm">
     <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    <input type="text" id="name" name="name" required><br>
     
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    <input type="email" id="email" name="email" required><br>
     
     <label for="phone">Phone</label><br>
-    <input type="tel" id="phone" name="phone" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    <input type="tel" id="phone" name="phone" required><br>
     
     <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="4" style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"></textarea><br>
+    <textarea id="message" name="message" rows="4"></textarea><br>
     
-    <button type="submit" style="background:#e0a800;color:black;padding:12px 20px;border:none;border-radius:5px;font-weight:bold;margin-top:10px;cursor:pointer;">Submit</button>
+    <button type="submit">Submit</button>
   </form>
   <p id="formMessage" style="margin-top:15px;text-align:center;"></p>
 </div>
@@ -286,7 +298,7 @@ As the owner and lead detailer, he handles every car personally—and even earns
 <script>
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
-  document.getElementById('formMessage').innerText = "Thank you! We'll get back to you shortly.";
+  alert("Thank you! We'll get back to you shortly.");
   this.reset();
 });
 </script>
