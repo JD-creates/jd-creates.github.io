@@ -295,14 +295,13 @@ As the owner and lead detailer, he personally handles every car—and yes, he’
     
     <button type="submit" style="background:#e0a800;color:black;padding:12px 20px;border:none;border-radius:5px;font-weight:bold;margin-top:10px;cursor:pointer;">Submit</button>
   </form>
-  <p id="formMessage" style="margin-top:15px;text-align:center;"></p>
 </div>
 </section>
 
 <script>
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
-  document.getElementById('formMessage').innerText = "Thank you! We'll get back to you shortly.";
+  alert("Thank you! We'll get back to you shortly.");
   this.reset();
 });
 </script>
