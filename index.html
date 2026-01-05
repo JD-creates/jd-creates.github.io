@@ -92,6 +92,17 @@ footer {
   text-align: center;
   padding: 25px;
 }
+
+input, textarea {
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
 </style>
 </head>
 
@@ -121,23 +132,26 @@ footer {
 <h2>PRODUCTS & SERVICES</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%207.jpeg">
+    <img src="Image%207.jpeg" style="height:200px;object-fit:cover;">
     <h3>Exterior Detail</h3>
     <p>Full hand wash, wheels, tires, and paint shine.</p>
     <p class="price">$120</p>
   </div>
   <div class="card">
-    <img src="Image%208.jpeg">
+    <img src="Image%208.jpeg" style="height:200px;object-fit:cover;">
     <h3>Interior Detail</h3>
     <p>Deep vacuum, wipe-down, leather & fabric care.</p>
     <p class="price">$140</p>
   </div>
   <div class="card">
-    <img src="Image%2013.jpeg">
+    <img src="Image%2013.jpeg" style="height:200px;object-fit:cover;">
     <h3>Full Detail</h3>
     <p>Complete interior + exterior restoration.</p>
     <p class="price">$220</p>
   </div>
+</div>
+<div style="text-align:center;margin-top:25px;">
+  <a href="#book" style="background:#e0a800;color:black;padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:bold;">Book Now</a>
 </div>
 </section>
 
@@ -245,6 +259,37 @@ As the owner and lead detailer, he handles every car personally—and even earns
   </div>
 </div>
 </section>
+
+<!-- BOOKING FORM SECTION -->
+<section id="book">
+<h2>BOOK YOUR DETAIL</h2>
+<div style="max-width:500px;margin:auto;background:#141414;padding:20px;border-radius:10px;">
+  <form id="bookingForm">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    
+    <label for="phone">Phone</label><br>
+    <input type="tel" id="phone" name="phone" required style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"><br>
+    
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" rows="4" style="width:100%;padding:8px;margin:5px 0;border-radius:5px;border:none;"></textarea><br>
+    
+    <button type="submit" style="background:#e0a800;color:black;padding:12px 20px;border:none;border-radius:5px;font-weight:bold;margin-top:10px;cursor:pointer;">Submit</button>
+  </form>
+  <p id="formMessage" style="margin-top:15px;text-align:center;"></p>
+</div>
+</section>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formMessage').innerText = "Thank you! We'll get back to you shortly.";
+  this.reset();
+});
+</script>
 
 <footer>
 © 2026 JD Auto Detailing
